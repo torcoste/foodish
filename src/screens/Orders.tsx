@@ -28,7 +28,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-export default class HomeScreen extends React.Component {
+export default class OrdersScreen extends React.Component {
   static navigationOptions = {
     // title: "Home",
     headerTitle: () => <Text> Home </Text>,

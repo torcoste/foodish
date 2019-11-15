@@ -9,34 +9,36 @@ import 'react-native-gesture-handler';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
-import Home from './screens/Home';
-import Details from './screens/Details';
+import DiscoverScreen from './screens/Discover';
+import LocationsScreen from './screens/Locations';
+import OrdersScreen from './screens/Orders';
+import ProfileScreen from './screens/Profile';
 
 const AppNavigator = createBottomTabNavigator(
   {
     Discover: {
-      screen: Home,
+      screen: DiscoverScreen,
       navigationOptions: {
         tabBarLabel: 'Discover',
         tabBarIcon: ({tintColor}) => <Text>sda</Text>,
       },
     },
     Locations: {
-      screen: Details,
+      screen: LocationsScreen,
       navigationOptions: {
         tabBarLabel: 'Locations',
         tabBarIcon: ({tintColor}) => <Text>sda</Text>,
       },
     },
     Orders: {
-      screen: Home,
+      screen: OrdersScreen,
       navigationOptions: {
         tabBarLabel: 'Orders',
         tabBarIcon: ({tintColor}) => <Text>sda</Text>,
       },
     },
     Profile: {
-      screen: Details,
+      screen: ProfileScreen,
       navigationOptions: {
         tabBarLabel: 'Profile',
         tabBarIcon: ({tintColor}) => <Text>sda</Text>,
