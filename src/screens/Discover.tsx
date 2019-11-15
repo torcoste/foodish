@@ -17,6 +17,8 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Image,
+  Platform,
+  TouchableOpacity,
 } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
 
@@ -60,6 +62,12 @@ export default class DiscoverScreen extends React.Component {
         <TouchableWithoutFeedback onPress={() => this.bs.current.snapTo(0)}>
           <Image style={styles.map} source={require('../assets/map-bg.jpg')} />
         </TouchableWithoutFeedback>
+        <View style={styles.leftButtonsGroup}>
+          <TouchableOpacity style={styles.burgerButton}></TouchableOpacity>
+          <TouchableOpacity
+            style={styles.yourLocationButton}></TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.notificationsButton}></TouchableOpacity>
       </View>
     );
   }
@@ -71,6 +79,41 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+  },
+  notificationsButton: {
+    height: 60,
+    width: 100,
+    borderRadius: 40,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    position: 'absolute',
+    top: Platform.OS === 'android' ? 10 : 40,
+    right: 10,
+  },
+  leftButtonsGroup: {
+    height: 60,
+    position: 'absolute',
+    top: Platform.OS === 'android' ? 10 : 40,
+    left: 10,
+    alignItems: 'center',
+  },
+  burgerButton: {
+    height: 60,
+    width: 60,
+    borderRadius: 40,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  },
+  yourLocationButton: {
+    height: 45,
+    width: 45,
+    marginTop: 10,
+    borderRadius: 40,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   box: {
     width: IMAGE_SIZE,
