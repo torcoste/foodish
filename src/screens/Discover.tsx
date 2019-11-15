@@ -54,13 +54,13 @@ export default class DiscoverScreen extends React.Component {
       <View style={styles.container}>
         <BottomSheet
           ref={this.bs}
-          snapPoints={['70%', '60%', '50%', 250, 50]}
+          snapPoints={['70%', '50%', 250, 50]}
           renderContent={this.renderInner}
           renderHeader={this.renderHeader}
           initialSnap={1}
         />
         <TouchableWithoutFeedback onPress={() => this.bs.current.snapTo(0)}>
-          <Image style={styles.map} source={require('../assets/map-bg.jpg')} />
+          <Image style={styles.map} source={require('assets/map-bg.jpg')} />
         </TouchableWithoutFeedback>
         <View style={styles.leftButtonsGroup}>
           <TouchableOpacity style={styles.burgerButton}></TouchableOpacity>

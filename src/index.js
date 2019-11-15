@@ -9,10 +9,10 @@ import 'react-native-gesture-handler';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
-import DiscoverScreen from './screens/Discover';
-import LocationsScreen from './screens/Locations';
-import OrdersScreen from './screens/Orders';
-import ProfileScreen from './screens/Profile';
+import DiscoverScreen from 'screens/Discover';
+import LocationsScreen from 'screens/Locations';
+import OrdersScreen from 'screens/Orders';
+import ProfileScreen from 'screens/Profile';
 
 const AppNavigator = createBottomTabNavigator(
   {
