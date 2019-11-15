@@ -54,7 +54,7 @@ export default class HomeScreen extends React.Component {
             <Header />
           </ScrollView>
             <Button
-              onPress={() => this.props.navigation.navigate('Details')}
+              onPress={() => this.props.navigation.navigate('Locations')}
               title="Go Details "
               color="#000"
             />
