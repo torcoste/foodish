@@ -29,8 +29,8 @@
     "setIcon": "yo rn-toolbox:assets --icon resources/icon.png --ios"
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react": "16.9.0",
+    "react-native": "0.61.4"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
