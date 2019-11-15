@@ -10,23 +10,15 @@
 
 import React, {Fragment} from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
   Button,
   Alert,
+  TouchableWithoutFeedback,
+  Image,
 } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import BottomSheet from 'reanimated-bottom-sheet';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -43,62 +35,78 @@ export default class DiscoverScreen extends React.Component {
 
   usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
 
+  renderInner = () => <View style={styles.panel}></View>;
+
+  renderHeader = () => (
+    <View style={styles.header}>
+      <View style={styles.panelHeader}>
+        <View style={styles.panelHandle} />
+      </View>
+    </View>
+  );
+
+  bs = React.createRef();
+
   render() {
     return (
-      <Fragment>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <Header />
-          </ScrollView>
-            <Button
-              onPress={() => this.props.navigation.navigate('Locations')}
-              title="Go Details "
-              color="#000"
-            />
-        </SafeAreaView>
-      </Fragment>
+      <View style={styles.container}>
+        <BottomSheet
+          ref={this.bs}
+          snapPoints={['70%', '60%', '50%', 250, 50]}
+          renderContent={this.renderInner}
+          renderHeader={this.renderHeader}
+          initialSnap={1}
+        />
+        <TouchableWithoutFeedback onPress={() => this.bs.current.snapTo(0)}>
+          <Image style={styles.map} source={require('../assets/map-bg.jpg')} />
+        </TouchableWithoutFeedback>
+      </View>
     );
   }
 }
 
+const IMAGE_SIZE = 200;
+
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
   },
-  engine: {
+  box: {
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+  },
+  panelContainer: {
     position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
     right: 0,
   },
-  body: {
-    backgroundColor: Colors.white,
+  panel: {
+    height: 600,
+    padding: 20,
+    backgroundColor: '#f7f5eeee',
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  header: {
+    backgroundColor: '#f7f5eee8',
+    shadowColor: '#000000',
+    paddingTop: 12,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  panelHeader: {
+    alignItems: 'center',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  panelHandle: {
+    width: 40,
+    height: 6,
+    borderRadius: 4,
+    backgroundColor: '#00000040',
+    marginBottom: 10,
   },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  map: {
+    height: '100%',
+    width: '100%',
   },
 });
