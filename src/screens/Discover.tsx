@@ -1,14 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React, {Fragment} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -21,6 +11,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
+
+import RoundedButton from 'components/Buttons/RoundedButton';
 
 export default class DiscoverScreen extends React.Component {
   static navigationOptions = {
@@ -37,7 +29,16 @@ export default class DiscoverScreen extends React.Component {
 
   usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
 
-  renderInner = () => <View style={styles.panel}></View>;
+  renderInner = () => (
+    <View style={styles.panel}>
+      <View style={styles.roundedButtonsContainer}>
+        <RoundedButton color="#fb5b83" text="Meals" />
+        <RoundedButton color="#f3a407" text="Bread" />
+        <RoundedButton color="#ae66ff" text="Sweets" />
+        <RoundedButton color="#3585bd" text="Groceryes" />
+      </View>
+    </View>
+  );
 
   renderHeader = () => (
     <View style={styles.header}>
@@ -79,6 +80,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+  },
+  roundedButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
   notificationsButton: {
     height: 60,

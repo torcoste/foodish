@@ -19,7 +19,7 @@
     "run:ios": "yarn pod && react-native run-ios",
     "run:iosx": "react-native run-ios --simulator='iPhone X'",
     "run:ios8": "react-native run-ios --simulator='iPhone 8'",
-    "run:ios5s": "react-native run-ios --simulator='iPhone 5s'",
+    "run:iosse": "react-native run-ios --simulator='iPhone SE'",
     "xcode": "open ios/ReactNativeApp.xcodeproj",
     "xcworkspace": "open ios/ReactNativeApp.xcworkspace",
     "pod": "cd ios && pod install",
