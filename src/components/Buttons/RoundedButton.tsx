@@ -9,10 +9,12 @@ import {
   Text,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 interface Props extends TouchableOpacityProps {
   style?: StyleProp<ViewStyle>;
   color?: string;
-  icon?: React.ReactNode;
+  icon?: string;
   onPress?: () => void;
   text: string;
 }
@@ -28,8 +30,7 @@ export default class RoundedButton extends React.Component<Props> {
         onPressIn={onPress}
         style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <View style={[styles.container, colorStyle, style]}>
-          {icon}
-          <Text style={{color: 'white'}}>icon</Text>
+        <Icon name={icon} size={24} color="rgba(255, 255, 255, 0.7)" />
         </View>
         <Text style={{color: "rgba(0, 0, 0, 0.4)"}}>{text}</Text>
       </TouchableOpacity>

@@ -9,6 +9,8 @@ import 'react-native-gesture-handler';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import DiscoverScreen from 'screens/Discover';
 import LocationsScreen from 'screens/Locations';
 import OrdersScreen from 'screens/Orders';
@@ -20,28 +22,36 @@ const AppNavigator = createBottomTabNavigator(
       screen: DiscoverScreen,
       navigationOptions: {
         tabBarLabel: 'Discover',
-        tabBarIcon: ({tintColor}) => <Text>sda</Text>,
+        tabBarIcon: ({tintColor}) => (
+          <Icon name={'silverware-fork-knife'} size={24} color={tintColor} />
+        ),
       },
     },
     Locations: {
       screen: LocationsScreen,
       navigationOptions: {
         tabBarLabel: 'Locations',
-        tabBarIcon: ({tintColor}) => <Text>sda</Text>,
+        tabBarIcon: ({tintColor}) => (
+          <Icon name={'home'} size={24} color={tintColor} />
+        ),
       },
     },
     Orders: {
       screen: OrdersScreen,
       navigationOptions: {
         tabBarLabel: 'Orders',
-        tabBarIcon: ({tintColor}) => <Text>sda</Text>,
+        tabBarIcon: ({tintColor}) => (
+          <Icon name={'package-variant'} size={24} color={tintColor} />
+        ),
       },
     },
     Profile: {
       screen: ProfileScreen,
       navigationOptions: {
         tabBarLabel: 'Profile',
-        tabBarIcon: ({tintColor}) => <Text>sda</Text>,
+        tabBarIcon: ({tintColor}) => (
+          <Icon name={'account'} size={24} color={tintColor} />
+        ),
       },
     },
   },

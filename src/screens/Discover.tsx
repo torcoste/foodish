@@ -32,10 +32,18 @@ export default class DiscoverScreen extends React.Component {
   renderInner = () => (
     <View style={styles.panel}>
       <View style={styles.roundedButtonsContainer}>
-        <RoundedButton color="#fb5b83" text="Meals" />
-        <RoundedButton color="#f3a407" text="Bread" />
-        <RoundedButton color="#ae66ff" text="Sweets" />
-        <RoundedButton color="#3585bd" text="Groceryes" />
+        <RoundedButton
+          color="#fb5b83"
+          text="Meals"
+          icon={'silverware-fork-knife'}
+        />
+        <RoundedButton
+          color="#f3a407"
+          text="Bread"
+          icon={'bread-slice-outline'}
+        />
+        <RoundedButton color="#ae66ff" text="Sweets" icon={'cake-variant'} />
+        <RoundedButton color="#3585bd" text="Groceryes" icon={'food-variant'} />
       </View>
     </View>
   );
