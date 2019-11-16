@@ -19,20 +19,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 export default class OrdersScreen extends React.Component {
-  static navigationOptions = {
-    // title: "Home",
-    headerTitle: () => <Text> Home </Text>,
-    headerRight: () => (
-      <Button
-        onPress={() => Alert.alert('This is a button!')}
-        title="Button"
-        color="#000"
-      />
-    ),
-  };
-
-  usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
-
   render() {
     return (
       <Fragment>

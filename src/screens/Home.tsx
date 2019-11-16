@@ -17,20 +17,6 @@ import RoundedButton from 'components/Buttons/RoundedButton';
 import RegularButton from '../components/Buttons/RegularButton';
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    // title: "Home",
-    headerTitle: () => <Text> Home </Text>,
-    headerRight: () => (
-      <Button
-        onPress={() => Alert.alert('This is a button!')}
-        title="Button"
-        color="#000"
-      />
-    ),
-  };
-
-  usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
-
   renderInner = () => (
     <View style={styles.panel}>
       <View style={styles.roundedButtonsContainer}>
@@ -50,14 +36,12 @@ export default class HomeScreen extends React.Component {
       <View style={styles.separator} />
       <View style={styles.card}>
         <Text style={styles.cardHeading}>Extra Ingridients? 😏</Text>
-        <Text style={styles.cardSubheading}>
-          Do you have something... 😉
-        </Text>
-        <RegularButton text="SCAN PRODUCTS" color="#f3a407"/>
+        <Text style={styles.cardSubheading}>Do you have something... 😉</Text>
+        <RegularButton text="SCAN PRODUCTS" color="#f3a407" />
       </View>
       <View style={[styles.card]}>
         <Text style={styles.cardHeading}>Give ingrisients, get Potnts ⚪️</Text>
-        <RegularButton text="Help Find New home for Products" color="#fb5b83"/>
+        <RegularButton text="Help Find New home for Products" color="#fb5b83" />
       </View>
     </View>
   );

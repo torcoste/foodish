@@ -1,11 +1,8 @@
 import React, {Fragment} from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
   Button,
   Alert,
   Platform,
@@ -19,20 +16,6 @@ import {FlatList} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ProfileScreen extends React.Component {
-  static navigationOptions = {
-    // title: "Home",
-    headerTitle: () => <Text> Details </Text>,
-    headerRight: () => (
-      <Button
-        onPress={() => Alert.alert('This is a button!')}
-        title="Info"
-        color="#000"
-      />
-    ),
-  };
-
-  usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
-
   sliderRenderItem({item, index}) {
     return (
       <View
