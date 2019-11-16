@@ -49,17 +49,15 @@ export default class HomeScreen extends React.Component {
       </View>
       <View style={styles.separator} />
       <View style={styles.card}>
-        <Text style={styles.cardHeading}>Recruit places, get point!</Text>
+        <Text style={styles.cardHeading}>Extra Ingridients? 😏</Text>
         <Text style={styles.cardSubheading}>
-          Ipsum dolor sit amet. Ipsum dolor sit amet.{' '}
+          Do you have something... 😉
         </Text>
-        <RegularButton text="GO TO AMBASSADOR PORTAL" />
+        <RegularButton text="SCAN PRODUCTS" color="#f3a407"/>
       </View>
-      <View style={styles.card}>
-        <Text style={styles.cardHeading}>Always 50% off!</Text>
-        <Text style={styles.cardSubheading}>
-          Ipsum dolor sit amet. Ipsum dolor sit amet.{' '}
-        </Text>
+      <View style={[styles.card]}>
+        <Text style={styles.cardHeading}>Give ingrisients, get Potnts ⚪️</Text>
+        <RegularButton text="Help Find New home for Products" color="#fb5b83"/>
       </View>
     </View>
   );

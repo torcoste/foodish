@@ -35,7 +35,10 @@ export default class RegularButton extends React.Component<Props> {
       <TouchableOpacity
         onPressIn={onPress}
         style={[styles.container, colorStyle, style]}>
-        <Text style={{color: textColor, fontWeight: "700"}}>{text}</Text>
+        <Text
+          style={{color: textColor, fontWeight: '700', textAlign: 'center'}}>
+          {text}
+        </Text>
       </TouchableOpacity>
     );
   }
