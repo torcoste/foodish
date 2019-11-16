@@ -1,4 +1,4 @@
-package com.reactnativeapp;
+package uk.kosty.foodish;
 
 import android.app.Application;
 import android.content.Context;

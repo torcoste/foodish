@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeApp",
+  "name": "foodish",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,8 +20,7 @@
     "run:iosx": "react-native run-ios --simulator='iPhone X'",
     "run:ios8": "react-native run-ios --simulator='iPhone 8'",
     "run:iosse": "react-native run-ios --simulator='iPhone SE'",
-    "xcode": "open ios/ReactNativeApp.xcodeproj",
-    "xcworkspace": "open ios/ReactNativeApp.xcworkspace",
+    "xcode": "open ios/foodish.xcworkspace",
     "pod": "cd ios && pod install",
     "prepublish": "",
     "postinstall": "",

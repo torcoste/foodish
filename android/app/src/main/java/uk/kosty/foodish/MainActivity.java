@@ -1,4 +1,4 @@
-package com.reactnativeapp;
+package uk.kosty.foodish;
 
 import android.os.Bundle;
 
@@ -30,6 +30,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "ReactNativeApp";
+        return "foodish";
     }
 }
