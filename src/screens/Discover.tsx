@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {
+  SafeAreaView,
   StyleSheet,
+  ScrollView,
   View,
   Text,
+  StatusBar,
   Button,
   Alert,
-  TouchableWithoutFeedback,
-  Image,
-  Platform,
-  TouchableOpacity,
 } from 'react-native';
-import BottomSheet from 'reanimated-bottom-sheet';
 
-import RoundedButton from 'components/Buttons/RoundedButton';
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
 
-export default class DiscoverScreen extends React.Component {
+export default class OrdersScreen extends React.Component {
   static navigationOptions = {
     // title: "Home",
     headerTitle: () => <Text> Home </Text>,
@@ -29,140 +33,62 @@ export default class DiscoverScreen extends React.Component {
 
   usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
 
-  renderInner = () => (
-    <View style={styles.panel}>
-      <View style={styles.roundedButtonsContainer}>
-        <RoundedButton
-          color="#fb5b83"
-          text="Meals"
-          icon={'silverware-fork-knife'}
-        />
-        <RoundedButton
-          color="#f3a407"
-          text="Bread"
-          icon={'bread-slice-outline'}
-        />
-        <RoundedButton color="#ae66ff" text="Sweets" icon={'cake-variant'} />
-        <RoundedButton color="#3585bd" text="Groceryes" icon={'food-variant'} />
-      </View>
-    </View>
-  );
-
-  renderHeader = () => (
-    <View style={styles.header}>
-      <View style={styles.panelHeader}>
-        <View style={styles.panelHandle} />
-      </View>
-    </View>
-  );
-
-  bs = React.createRef();
-
   render() {
     return (
-      <View style={styles.container}>
-        <BottomSheet
-          ref={this.bs}
-          snapPoints={['70%', '50%', 250, 50]}
-          renderContent={this.renderInner}
-          renderHeader={this.renderHeader}
-          initialSnap={1}
-        />
-        <TouchableWithoutFeedback onPress={() => this.bs.current.snapTo(0)}>
-          <Image style={styles.map} source={require('assets/map-bg.jpg')} />
-        </TouchableWithoutFeedback>
-        <View style={styles.leftButtonsGroup}>
-          <TouchableOpacity style={styles.burgerButton}></TouchableOpacity>
-          <TouchableOpacity
-            style={styles.yourLocationButton}></TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.notificationsButton}></TouchableOpacity>
-      </View>
+      <Fragment>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+            <Header />
+          </ScrollView>
+            <Button
+              onPress={() => this.props.navigation.navigate('Locations')}
+              title="Go Details "
+              color="#000"
+            />
+        </SafeAreaView>
+      </Fragment>
     );
   }
 }
 
-const IMAGE_SIZE = 200;
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
+  scrollView: {
+    backgroundColor: Colors.lighter,
   },
-  roundedButtonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  notificationsButton: {
-    height: 60,
-    width: 100,
-    borderRadius: 40,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.3)',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  engine: {
     position: 'absolute',
-    top: Platform.OS === 'android' ? 10 : 40,
-    right: 10,
-  },
-  leftButtonsGroup: {
-    height: 60,
-    position: 'absolute',
-    top: Platform.OS === 'android' ? 10 : 40,
-    left: 10,
-    alignItems: 'center',
-  },
-  burgerButton: {
-    height: 60,
-    width: 60,
-    borderRadius: 40,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.3)',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-  },
-  yourLocationButton: {
-    height: 45,
-    width: 45,
-    marginTop: 10,
-    borderRadius: 40,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.3)',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-  },
-  box: {
-    width: IMAGE_SIZE,
-    height: IMAGE_SIZE,
-  },
-  panelContainer: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
     right: 0,
   },
-  panel: {
-    height: 600,
-    padding: 20,
-    backgroundColor: '#f7f5eeee',
+  body: {
+    backgroundColor: Colors.white,
   },
-  header: {
-    backgroundColor: '#f7f5eee8',
-    shadowColor: '#000000',
-    paddingTop: 12,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
   },
-  panelHeader: {
-    alignItems: 'center',
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black,
   },
-  panelHandle: {
-    width: 40,
-    height: 6,
-    borderRadius: 4,
-    backgroundColor: '#00000040',
-    marginBottom: 10,
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
   },
-  map: {
-    height: '100%',
-    width: '100%',
+  highlight: {
+    fontWeight: '700',
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
   },
 });

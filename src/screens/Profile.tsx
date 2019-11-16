@@ -67,7 +67,7 @@ export default class ProfileScreen extends React.Component {
               alignItems: 'center',
             }}>
             <Text style={styles.usernameText}>
-              {'Sandy'.toLocaleUpperCase()}{' '}
+              {'Sandy'.toLocaleUpperCase()}
             </Text>
             <TouchableOpacity>
               <Icon name="cog" size={30} color="rgba(255, 255, 255, 0.7)" />
@@ -111,15 +111,24 @@ export default class ProfileScreen extends React.Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <View style={styles.textBlockHeaderContainer}>
-              <Text style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>12 Kg</Text>
+              <Text
+                style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>
+                12 Kg
+              </Text>
               <Text style={styles.textBlockHeader}>waste reduced</Text>
             </View>
             <View style={styles.textBlockHeaderContainer}>
-            <Text style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>+3</Text>
+              <Text
+                style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>
+                +3
+              </Text>
               <Text style={styles.textBlockHeader}>new friends</Text>
             </View>
             <View style={styles.textBlockHeaderContainer}>
-            <Text style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>27 eur</Text>
+              <Text
+                style={[styles.textBlockHeader, styles.textBlockHeaderHeading]}>
+                27 eur
+              </Text>
               <Text style={styles.textBlockHeader}>saved</Text>
             </View>
           </View>
@@ -150,14 +159,14 @@ const styles = StyleSheet.create({
   },
   textBlockHeader: {
     color: 'white',
-    fontSize: 12
+    fontSize: 12,
   },
   textBlockHeaderHeading: {
     fontSize: 20,
-    marginBottom: 4
+    marginBottom: 4,
   },
   textBlockHeaderContainer: {
-    alignItems: "center",
+    alignItems: 'center',
     flex: 1,
     paddingHorizontal: 8,
   },

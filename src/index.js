@@ -11,13 +11,21 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import HomeScreen from 'screens/Home';
 import DiscoverScreen from 'screens/Discover';
-import LocationsScreen from 'screens/Locations';
-import OrdersScreen from 'screens/Orders';
 import ProfileScreen from 'screens/Profile';
 
 const AppNavigator = createBottomTabNavigator(
   {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        tabBarLabel: 'Home',
+        tabBarIcon: ({tintColor}) => (
+          <Icon name={'home'} size={24} color={tintColor} />
+        ),
+      },
+    },
     Discover: {
       screen: DiscoverScreen,
       navigationOptions: {
@@ -27,21 +35,12 @@ const AppNavigator = createBottomTabNavigator(
         ),
       },
     },
-    Locations: {
-      screen: LocationsScreen,
+    Achievements: {
+      screen: ProfileScreen,
       navigationOptions: {
-        tabBarLabel: 'Locations',
+        tabBarLabel: 'Achievements',
         tabBarIcon: ({tintColor}) => (
-          <Icon name={'home'} size={24} color={tintColor} />
-        ),
-      },
-    },
-    Orders: {
-      screen: OrdersScreen,
-      navigationOptions: {
-        tabBarLabel: 'Orders',
-        tabBarIcon: ({tintColor}) => (
-          <Icon name={'package-variant'} size={24} color={tintColor} />
+          <Icon name={'trophy-variant'} size={24} color={tintColor} />
         ),
       },
     },
@@ -56,7 +55,7 @@ const AppNavigator = createBottomTabNavigator(
     },
   },
   {
-    initialRouteName: 'Discover',
+    initialRouteName: 'Home',
     header: null,
     headerMode: 'none',
     tabBarOptions: {
