@@ -2,12 +2,13 @@
  * @format
  */
 
-import {AppRegistry, Text} from 'react-native';
+import {AppRegistry} from 'react-native';
 import React from 'react';
 import {name as appName} from '../app.json';
 import 'react-native-gesture-handler';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createStackNavigator} from 'react-navigation-stack';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -15,10 +16,36 @@ import HomeScreen from 'screens/Home';
 import DiscoverScreen from 'screens/Discover';
 import ProfileScreen from 'screens/Profile';
 
-const AppNavigator = createBottomTabNavigator(
+import ScanStep1Screen from 'screens/ScanProduct/Step1';
+import ScanCameraScreen from 'screens/ScanProduct/Camera';
+
+const HomeStack = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
+      navigationOptions: {
+        headerMode: 'none',
+        header: null,
+      },
+    },
+    ScanStep1: {
+      screen: ScanStep1Screen,
+    },
+    ScanCamera: {
+      screen: ScanCameraScreen,
+      navigationOptions: {
+        headerMode: 'none',
+        header: null,
+      },
+    },
+  },
+  {initialRouteName: 'Home'},
+);
+
+const AppNavigator = createBottomTabNavigator(
+  {
+    Home: {
+      screen: HomeStack,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: ({tintColor}) => (

@@ -37,7 +37,13 @@ export default class HomeScreen extends React.Component {
       <View style={styles.card}>
         <Text style={styles.cardHeading}>Extra Ingridients? 😏</Text>
         <Text style={styles.cardSubheading}>Do you have something... 😉</Text>
-        <RegularButton text="SCAN PRODUCTS" color="#f3a407" />
+        <RegularButton
+          text="SCAN PRODUCTS"
+          color="#f3a407"
+          onPress={() => {
+            this.props.navigation.navigate('ScanStep1');
+          }}
+        />
       </View>
       <View style={[styles.card]}>
         <Text style={styles.cardHeading}>Give ingrisients, get Potnts ⚪️</Text>
