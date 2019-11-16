@@ -9,6 +9,7 @@ import {
   Image,
   Platform,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -33,9 +34,13 @@ export default class ScanStep1Screen extends React.Component {
           <Text style={styles.cardHeading}>Scan a Product</Text>
         </TouchableOpacity>
 
-        <Text style={{alignSelf: 'center', padding: 32, fontSize: 18}}>
-          {' '}
-          OR{' '}
+        <Text
+          style={{
+            alignSelf: 'center',
+            padding: (Dimensions.get('screen').height / 100) * 5,
+            fontSize: 18,
+          }}>
+          OR
         </Text>
 
         <View style={styles.card}>
@@ -55,7 +60,8 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: 'rgba(255, 255, 255, 1)',
-    height: 180,
+    height: (Dimensions.get('screen').height / 100) * 27,
+    maxHeight: 180,
     borderRadius: 18,
     shadowColor: '#000',
     shadowOffset: {

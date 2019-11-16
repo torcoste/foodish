@@ -42,6 +42,20 @@ const HomeStack = createStackNavigator(
   {initialRouteName: 'Home'},
 );
 
+HomeStack.navigationOptions = ({navigation}) => {
+  let tabBarVisible = true;
+
+  let routeName = navigation.state.routes[navigation.state.index].routeName;
+
+  if (routeName === 'ScanCamera') {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
 const AppNavigator = createBottomTabNavigator(
   {
     Home: {
