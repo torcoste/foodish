@@ -1,23 +1,7 @@
-# react-native-typescript
-React Native Typescript template
+# Foodish app
 
-## Set icon
+Junction 2019 challenge solution
 
-### iOS
-``` yarn setIcon ```
-### Android
-Open Android Studio
-``` yarn androidStudio ```
-Right click on the `app` folder, then click on `New` and then click on `Image Asset`. If you don't see this menu, be sure that you got the latest gradle version (should work with gradle >=3.4.2)
-In the `Icon Type` field select `Launcher Icons (Adaptative and Legacy)`
-In the `path` field, select your image file
-Once done, click on the `Next` button and then on the `finish` button
+# Mission Statement
 
-## Set splash
-
-### Android
-``` yarn setSplash ```
-### iOS
-Open XCode project
-``` yarn xcode ```
-and change `LaunchScreen.xib` as you want
+Using digital tech and AI to work in conjunction with K store data, and Helsinki open data to customise the shopping experience of citizens of Helsinki, enabling them to make better food & grocery choices that lead towards reducing food waste, and building responsible, informed and sustainable communities.
