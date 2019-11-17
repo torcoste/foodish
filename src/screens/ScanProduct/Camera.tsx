@@ -16,13 +16,17 @@ export default class ScanCameraScreen extends React.Component<State> {
     switch (event.type) {
       case 'left':
         return this.props.navigation.goBack();
+      case 'capture':
+        return this.props.navigation.navigate('SelectProducts');
     }
+
+    /*
     Alert.alert(
       `${event.type} button pressed`,
       `${captureImages}`,
       [{text: 'OK', onPress: () => console.log('OK Pressed')}],
       {cancelable: false},
-    );
+    );*/
   }
 
   componentDidMount() {

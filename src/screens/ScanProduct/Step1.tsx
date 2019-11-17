@@ -28,7 +28,8 @@ export default class ScanStep1Screen extends React.Component {
         <TouchableOpacity
           style={styles.card}
           onPress={() => {
-            this.props.navigation.navigate('ScanCamera');
+            //this.props.navigation.navigate('ScanCamera');
+            this.props.navigation.navigate('SelectProducts');
           }}>
           <Icon name="camera-outline" size={64} color="rgba(0, 0, 0, 0.7)" />
           <Text style={styles.cardHeading}>Scan a Product</Text>
