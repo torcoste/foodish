@@ -20,6 +20,7 @@ import ScanStep1Screen from 'screens/ScanProduct/Step1';
 import ScanCameraScreen from 'screens/ScanProduct/Camera';
 import SelectProductsScreen from 'screens/ScanProduct/SelectProducts';
 import SelectedProductsScreen from 'screens/ScanProduct/SelectedProducts';
+import ReciepsScreen from 'screens/ScanProduct/Recieps';
 
 const HomeStack = createStackNavigator(
   {
@@ -45,6 +46,9 @@ const HomeStack = createStackNavigator(
     },
     SelectedProducts: {
       screen: SelectedProductsScreen,
+    },
+    Recieps: {
+      screen: ReciepsScreen,
     },
   },
   {initialRouteName: 'Home'},

@@ -61,6 +61,7 @@ export default class SelectedProductsScreen extends React.Component {
         <View style={{padding: 8}}>
           <Text style={{fontSize: 18, marginBottom: 8}}>Choose Action:</Text>
           <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Recieps')}
             style={{
               flexDirection: 'row',
               alignItems: 'center',
