@@ -1,3 +1,6 @@
 [submodule "api"]
 	path = api
 	url = git@github.com:BadreddineYACHEUR/JunctionFoodish.git
+[submodule "data_analytics"]
+	path = data_analytics
+	url = git@github.com:melaniab/junction2019.git
