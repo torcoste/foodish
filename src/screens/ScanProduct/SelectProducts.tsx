@@ -39,16 +39,13 @@ export default class SelectProductsScreen extends React.Component {
         alignItems: 'center',
       }}>
       <Icon
-        name="camera-outline"
+        name={item.icon}
         size={24}
         color="rgba(0, 0, 0, 0.7)"
         style={{marginRight: 8}}
       />
-      <Text style={{flex: 1}}>Apple</Text>
-      <TextInput
-        style={{height: 40}}
-        value={Math.round(Math.random() * 2 + 1).toString()}
-      />
+      <Text style={{flex: 1}}>{item.name}</Text>
+      <TextInput style={{height: 40}} value={item.count.toString()} />
       <CheckBox style={{padding: 10}} onClick={() => {}} isChecked={true} />
     </View>
   );
@@ -88,14 +85,21 @@ export default class SelectProductsScreen extends React.Component {
             onPress={() => this.props.navigation.goBack()}
             style={{flex: 1, marginRight: 4}}
           />
-          <RegularButton text="Next" onPress={() => this.props.navigation.navigate("SelectedProducts")} style={{flex: 1, marginLeft: 4}} />
+          <RegularButton
+            text="Next"
+            onPress={() => this.props.navigation.navigate('SelectedProducts')}
+            style={{flex: 1, marginLeft: 4}}
+          />
         </View>
       </View>
     );
   }
 }
 
-const products = [{id: '1'}, {id: '2'}, {id: '3'}];
+const products = [
+  {id: '1', name: 'Egg', icon: 'egg', count: 3},
+  {id: '2', name: 'Milk', icon: 'cup-water', count: 1},
+];
 
 const styles = StyleSheet.create({
   container: {

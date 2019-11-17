@@ -39,16 +39,13 @@ export default class SelectedProductsScreen extends React.Component {
         alignItems: 'center',
       }}>
       <Icon
-        name="check"
+        name={item.icon}
         size={24}
         color="rgba(0, 0, 0, 0.7)"
         style={{marginRight: 8}}
       />
-      <Text style={{flex: 1}}>Apple</Text>
-      <TextInput
-        style={{height: 40}}
-        value={Math.round(Math.random() * 2 + 1).toString()}
-      />
+      <Text style={{flex: 1}}>{item.name}</Text>
+      <TextInput style={{height: 40}} value={item.count.toString()} />
     </View>
   );
 
@@ -113,7 +110,10 @@ export default class SelectedProductsScreen extends React.Component {
   }
 }
 
-const products = [{id: '1'}, {id: '2'}, {id: '3'}];
+const products = [
+  {id: '1', name: 'Egg', icon: 'egg', count: 3},
+  {id: '2', name: 'Milk', icon: 'cup-water', count: 1},
+];
 
 const styles = StyleSheet.create({
   container: {
