@@ -13,4 +13,4 @@ Using digital tech and AI to work in conjunction with K store data, and Helsinki
 
 # Data analitics 
 
-[Custoner segmentation](https://github.com/melaniab/junction2019/blob/master/Customer%20segmentation%20data%20.ipynb)
+[Customer segmentation](https://github.com/melaniab/junction2019/blob/master/Customer%20segmentation%20data%20.ipynb)
